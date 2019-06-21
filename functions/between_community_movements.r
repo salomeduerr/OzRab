@@ -157,7 +157,7 @@ if (length(candidate_dogs) > 0) {
     sapply(ID, function(x) {
      
      current_com <- str_sub(allDogs$community[x],1,2)
-     new_hh_candidates <- allDogs$hh_ID[str_sub(allDogs$hh_ID,1,2) == current_com]
+     new_hh_candidates <- allDogs$hh_ID[str_sub(allDogs$hh_ID,1,1) == current_com]
      
      newHH <- sample(new_hh_candidates, 1)
      newLat <- unique(allDogs$Lat[allDogs$hh_ID == newHH])
@@ -167,7 +167,7 @@ if (length(candidate_dogs) > 0) {
      allDogs$Lat[x] <<- newLat
      allDogs$Long[x] <<- newLong
      
-     if(str_sub(allDogs$hh_ID[x],1,2) == str_sub(allDogs$dog_ID[x],1,2)) 
+     if(str_sub(allDogs$hh_ID[x],1,1) == str_sub(allDogs$dog_ID[x],1,1)) 
         stop("error in between_community_movements(), new household allocation failed")
     }) 
      
