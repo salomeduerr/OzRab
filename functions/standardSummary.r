@@ -82,12 +82,13 @@ standardSummary <- function(step){
            # Open and set up graphics windows for the plots that have been
            # enabled. Since we are calling 'updateCharts' right after this
            # initial device setup nothing has to be plotted here.
-           if (displayEpiMap) {
-             x11(height=8, width=8) # Open initial epi map window
-             deviceNumberEpiMap <<- dev.cur() # Record device number of epi map window
-             plot(0,0,col="white")
-             title("Epi map pending...")
-           }
+           # Uncomment here when lat long of dog houses are known.  
+      #     if (displayEpiMap) {
+      #       x11(height=8, width=8) # Open initial epi map window
+      #       deviceNumberEpiMap <<- dev.cur() # Record device number of epi map window
+      #       plot(0,0,col="white")
+      #       title("Epi map pending...")
+      #     }
          
          if (verbose) cat("summaries$init() : END\n")
          }, # end init{}
